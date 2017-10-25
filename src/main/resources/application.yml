@@ -1,0 +1,28 @@
+server:
+  port: 5555
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.divide2: DEBUG
+
+#zuul:
+#  routes:
+#    organizationservice: /organization/**
+#    licensingserive: /license/**
+##    licensestatic:
+##      path: /licensestatic/**
+##      url: http://licenseservice-static:8081
+#  ignored-services: '*'
+#  prefix: /api
